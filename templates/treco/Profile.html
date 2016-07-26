@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}TREC-O - Profile{% endblock  %}
+{% block js%} <script type="text/javascript" src="{% static "js/profile.js" %}"></script> {% endblock %}
+{% block body_block %}
+{% csrf_token %}
+    {% if user.is_authenticated %}
+        {% if researcher %}
+<div class="background-grey sticky-footer-login">
+    <h1 class = "text-center prHeading" > Your profile </h1>
+    
+        <div class = "row">
+            <div class="medium-6 medium-centered columns black-font">
+                <div id = "profileDiv" class = "profileDiv">   
+                <p class = "text-center prInfo" >You are known by: {{ researcher.display_name }} </p>
+                <p class = "text-center prInfo" >Your profile picture: <img class="profile" src= "media/{{ researcher.profile_picture }}" alt="No image available"> </p>
+                <p class = "text-center prInfo" >Your website is: {{ researcher.website }}</p>
+                <p class = "text-center prInfo" >Your organisation is: {{ researcher.organization }}</p>
+                <p class = "text-center prInfo" ><a href ="/Results?researcher={{ researcher.display_name }}"> My Submissions </a></p>
+                <p  class = "text-center" id = "edit" ><a href ="UpdateProfile.html"> Edit Profile </a></p>
+                </div>
+        {% endif %}
+    {% endif %}
+            </div>
+        </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{
+	"result_charts":{
+		"table_chart":{
+			"type":"semi",
+			"options":{
+				"showRowNumber": "true", 
+				"width": "100%", 
+				"height": "100%",
+                "allowHtml": "true", 
+                "cssClassNames": "cssClassNames"
+			}
+		},
+		"bar_chart":{
+			"type":"semi",
+			"options":{
+				"chart": {
+				  "title": "Run performance and comparison"
+				},
+				"bars": "vertical"
+			}
+		},
+		"histogram_chart":{
+			"type":"semi",
+			"options":{
+				"chart": {
+				  "title": "Run performance and comparison"
+				}
+			}
+		},
+		"line_chart":{
+			"type":"semi",
+			"options":{
+				"chart": {
+				  "title": "Run performance and comparison"
+				}
+			}
+		}
+	},
+	"visitor_charts":{
+		"table_chart":{
+			"type":"full",
+			"options":{
+				"showRowNumber": "true", 
+				"width": "100%", 
+				"height": "100%",
+                "allowHtml": "true", 
+                "cssClassNames": "cssClassNames"
+			}
+		},
+		"line_chart":{
+			"type":"semi",
+			"options":{
+				"chart": {
+				  "title": "Runs ordered in submission order."
+				}
+			}
+		}
+	}
+}

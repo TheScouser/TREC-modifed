@@ -1,0 +1,27 @@
+{%extends "base.html" %}
+{% load staticfiles %}
+{% block title %}TREC-O{% endblock %}
+
+{% block js%}
+    <script type="text/javascript" src="{% static "js/indexChart.js" %}"></script>
+    
+{% endblock %}
+
+{% block body_block %}
+
+  <div class="row text-center">
+    <div class="medium-12 medium-centered columns white-font">
+      <h1>Need your search engine evaluated?</h1>
+      <div class="video">
+       <div id="chart"></div>
+      </div>
+        <p> Trec-O allows you to interface with TREC Eval, evaluate your search engine and compare it with other results.</p>
+        <p> We use Google Charts to provide beautiful graphs and tables presenting properly the results from a search run.</p>
+      <div>
+          <a class="button button-big" href="SubmitRun.html">Submit a run</a>
+      </div>
+    </div>
+  </div>
+
+  
+{% endblock %}

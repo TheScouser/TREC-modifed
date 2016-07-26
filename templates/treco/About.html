@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block background %}
+    <div class="wrapper background-radial-header">
+{% endblock%}
+
+{% block body_block %}
+{% csrf_token %}
+    {% if user.is_authenticated %}
+
+	    <div>
+			<iframe src="{{dashboard_url}}" frameborder="0" scrolling="no" onload="resizeIframe(this)" style="width: 100%;position:absolute;height:100%;">
+						
+			</iframe>
+		</div>
+
+	{% endif %}
+{% endblock%}

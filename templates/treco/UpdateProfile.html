@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}TREC-O - Edit Profile{% endblock %}
+{% block js%} <script type="text/javascript" src="{% static "js/profile.js" %}"></script> {% endblock %}
+{% block body_block %}
+<div class="background-grey sticky-footer-login">
+    <div class = "row">
+        <div class="medium-6 medium-centered columns black-font">
+        <form class = "base-form" id="form" method="post" action="{% url 'UpdateProfile' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h3 class = "text-center">Change Personal Information</h3>
+            {{form.as_p}}
+            <div class = "row">
+                <div class="medium-4 medium-centered columns">
+                    <input class="button expanded button-big cool-red float-center" type="submit" value="Submit" name = "info" />
+                </div>
+            </div>
+            </form>
+          <h2 class = "text-center"><a class="change" href="#" id="change">Change Password </a></h2>
+            <form class = "base-form" id="changePass" method="post" action="{% url 'UpdateProfile' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ user_form.as_p }}
+                <div class = "row">
+                    <div class="medium-4 medium-centered columns">
+                        <input class="button expanded button-big cool-red float-center" type="submit" value="Submit" name = "changep" />
+                    </div>
+                </div>   
+            </form>
+        
+        </div>    
+    </div>    
+</div>
+{% endblock %}

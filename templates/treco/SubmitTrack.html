@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}TREC-O - Submit Track{% endblock %}
+{% block background %}
+<div class="wrapper background-radial-header">
+{% endblock%}
+{% block body_block %}
+<div class="background-grey sticky-footer-track">
+    <div class="row extra-top-padding">
+        <div class="medium-3 medium-centered columns black-font">
+        <form id="submitTrack_form" method="post" action="{% url 'SubmitTrack' %}">
+        <h1 class="text-center"> Submit Track </h1>
+            {% csrf_token %}
+
+            <p>{{ form.non_field_errors }}</p>
+            <p>{{ form.track_title.label_tag }}</p>
+            <p>
+                {{ form.track_title.errors }}
+                {{ form.track_title }}
+            </p>
+            <p>{{ form.description.label_tag }}</p>
+            <p>
+                {{ form.description.errors }}
+                {{ form.description }}
+            </p>
+            <p>{{ form.genre.label_tag }}</p>
+            <p>
+                {{ form.genre.errors }}
+                {{ form.genre }}
+            </p>
+            <div class="row">
+                <div class="medium-10 medium-centered columns">
+                    <input class="button expanded button-big cool-red float-center" type="submit" value="Submit Track" />
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

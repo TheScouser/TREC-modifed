@@ -1,0 +1,93 @@
+{%extends "base.html" %}
+{% load staticfiles %}
+{% block title %}TREC-O - Results{% endblock %}
+{% block js%}
+    <script type="text/javascript" src="{% static "js/profile.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/main.js" %}"></script>
+{% endblock %}
+
+{% block background %}
+    <div class="wrapper background-radial-header">
+{% endblock%}
+
+{% block body_block %}
+    <div class="background-grey">
+        <div class="row expanded">
+            <div id="sidenav" class="medium-2 columns dashboard text-center">
+                <label class="label-select float-center">Select Track
+                    <select id="tracks">
+                    </select>
+                </label>
+                <label class="label-select float-center">Select Task
+                    <select id="tasks">
+                    </select>
+                </label>
+                <label class="label-select float-center">Select Run
+                    <select id="runs">
+                    </select>
+                </label>
+                <p class="info-text"><a class="more" href="#" id="click">More Filters</a></p>
+                <div class = "filters" id = "filters">
+                    <label class="label-select float-center">Select Researcher
+                        <select id="researchers">
+                            <option value="-">-</option>
+                        </select>
+                    </label>
+                    <label class="label-select float-center">Select Run Type
+                        <select id="run_types">
+                            <option class = "all" value="">-</option>
+                            <option class = "automatic" value="0">Automatic</option>
+                            <option class = "manual" value="1">Manual</option>
+                        </select>
+                    </label>
+                    <label class="label-select float-center">Select Query Type
+                        <select id="query_types">
+                            <option class = "all" value="">-</option>
+                            <option class = "title" value="0">Title</option>
+                            <option class = "description" value="2">Description</option>
+                            <option class = "title_des" value="1">Title and Description</option>
+                            <option class = "all" value="3">All</option>
+                            <option class = "other" value="4">Other</option>
+                        </select>
+                    </label>
+                    <label class="label-select float-center">Select Feedback
+                        <select id="feedback">
+                            <option class = "all" value="">-</option>
+                            <option class = "none" value="0">None</option>
+                            <option class = "Pseudo" value="1">Pseudo</option>
+                            <option class = "rel" value="2">Relevance</option>
+                            <option class = "other" value="3">Other</option>
+                        </select>
+                    </label>
+                    <label class = "label-select float-center"> Description </label>
+                    <input class = "float-center" id = "keyword">
+                </div>
+                <div>
+                    <a id="submit" class="button button-big">GET RESULTS </a>
+                    <a class="button button-big" href="/SubmitRun.html">Submit a new Run </a>
+                </div>
+            </div>
+            <div class="large-10 columns">
+                <div class="medium-4 columns">
+                    <div class="chart-medium" id = table>
+                    </div>
+                </div>
+                <div class="medium-8 columns">
+                    <div class="chart-medium" id="bar">
+                    </div>
+                </div>
+                <div class="medium-12 columns">
+                    <div class="chart-medium" id="line">
+                    </div>
+                </div>
+                <div class="medium-12 columns">
+                    <div class="chart-medium" id="histogram">
+                    </div>
+                </div>
+                <div class="medium-6 medium-centerd columns">
+                	
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

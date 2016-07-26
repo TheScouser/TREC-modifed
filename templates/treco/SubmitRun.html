@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{%block title %}TREC-O - Submit Run{% endblock %}
+{% block background %}
+<div class="wrapper background-radial-header">
+{% endblock%}
+{% block body_block %}
+<div class="background-grey">
+	<div class="row">
+		<div class="medium-3 medium-centered columns black-font">
+			<form id="run_form" method="post" action="{% url 'SubmitRun' %}" enctype="multipart/form-data">
+			<h1 class="text-center"> Submit Run </h1>
+            {% csrf_token %}
+
+            {{ form.as_p }}
+            <div class="row">
+            	<div class="medium-10 medium-centered columns">
+            		<input class="button expanded button-big cool-red float-center" type="submit" value="SUBMIT RUN" />
+            	</div>
+            </div>
+        </form>
+		</div>
+	</div>
+</div>
+{% endblock %}
+        
