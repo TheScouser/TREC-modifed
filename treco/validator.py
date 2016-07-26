@@ -11,7 +11,6 @@ def validateResultFile(filefield):
         line = filefield.readline().strip('\n\r').split("\t")
         if(line[0] == ''):
             break
-    print "Valid result file!"
     filefield.seek(0)
 
 
@@ -19,7 +18,6 @@ def validateResultFile(filefield):
 #301 0 CR93E-10505 0
 
 def validateJudgementFile(filefield):
-    print "Validating judgement file!"
     line = filefield.readline().strip('\n\r').split(" ")
     while(line):
         if(len(line) == 4):
@@ -30,7 +28,6 @@ def validateJudgementFile(filefield):
         line = filefield.readline().strip('\n\r').split(" ")
         if(line[0] == ''):
             break
-    print "Valid judgement file!"
     filefield.seek(0)
 
 

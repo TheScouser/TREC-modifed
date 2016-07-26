@@ -24,7 +24,7 @@ class Task(models.Model):
     task_url = models.URLField(max_length=128)
     description = models.CharField(max_length=128, default="")
     year = models.IntegerField(max_length=4)
-    judgement_file = models.FileField(upload_to='judgement_files', validators=[validateJudgementFile])
+    judgement_file = models.FileField(upload_to='judgement_files', validators=[])
 
     def save(self, *args, **kwargs):
         super(Task, self).save(*args, **kwargs)
@@ -44,7 +44,7 @@ class Researcher(models.Model):
         super(Researcher, self).save(*args, **kwargs)
 
     def delete_picture(self, *args, **kwargs):
-        print "Deleting"
+        print ("Deleting")
         # You have to prepare what you need before delete the model
         storage, path = self.image.storage, self.image.path
         # Delete the file after the model
@@ -66,7 +66,7 @@ class Run(models.Model):
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
     name = models.CharField(max_length=64, default="")
     description = models.CharField(max_length=256, default="")
-    result_file = models.FileField(upload_to='result_files', validators=[validateResultFile])
+    result_file = models.FileField(upload_to='result_files', validators=[])
     run_type = models.CharField(max_length=1, choices=RUNCHOICES)
     query_type = models.CharField(max_length=32, choices=QUERYCHOICES)
     feedback_type = models.CharField(max_length=32, choices=FEEDBACKCHOICES)
