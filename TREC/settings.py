@@ -24,7 +24,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['thescouser.pythonanywhere.com']
 
 # Application definition
 
@@ -84,11 +84,9 @@ USE_TZ = True
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+STATIC_ROOT= "/home/TheScouser/.virtualenvs/trec/src/TREC-modifed/static"
 STATIC_PATH = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-	STATIC_PATH,
-)
 
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 TEMPLATE_DIRS = (
