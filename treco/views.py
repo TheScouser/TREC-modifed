@@ -128,7 +128,7 @@ def user_login(request):
             user = authenticate(username=request.POST.get('username'), password=request.POST.get('password'))
             if user:
                 login(request, user)
-                return HttpResponseRedirect('/')
+                return HttpResponseRedirect('/About.html')
             else:
                 return HttpResponse("Invalid login details supplied!")
     else:
